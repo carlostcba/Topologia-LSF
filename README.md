@@ -57,11 +57,16 @@ flowchart LR
 
     C01 --> S09["09 - JARDIN - DIRECCION_V2"]
     S09 --> L12["12 - SW LAB ENERGIAS 24P"]
-    L12 --> LC1["SW GEN L2 LAB 1 COMP"]
-    L12 --> LC2["SW GEN L2 LAB 2 COMP"]
-    L12 --> LE3["SW GEN L2 LAB 3 ENERGIAS"]
-    L12 --> CNC["SW GEN L2 LAB 2 CNC"]
-    L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
+
+    %% Agrupar nodos colgados de L12 en forma vertical
+    subgraph lab_ener [ ]
+    direction TB
+        L12 --> LC1["SW GEN L2 LAB 1 COMP"]
+        L12 --> LC2["SW GEN L2 LAB 2 COMP"]
+        L12 --> LE3["SW GEN L2 LAB 3 ENERGIAS"]
+        L12 --> CNC["SW GEN L2 LAB 2 CNC"]
+        L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
+    end
 
     class RF enrutamiento;
     class C01 core;
