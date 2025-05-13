@@ -1,103 +1,97 @@
 ```mermaid
 flowchart LR
 
-    %% Estilos generales
-    classDef enrutamiento fill:#EA4335,stroke:#C62828,color:white;
-    classDef core fill:#0D47A1,stroke:#0B3C91,color:white;
-    classDef distribucion fill:#4285F4,stroke:#2A56C6,color:white;
-    classDef redistribucion fill:#34A853,stroke:#2E7D32,color:white;
-    classDef acceso fill:#FBBC05,stroke:#E8A203,color:black;
-    classDef especial fill:#EF6C00,stroke:#E65100,color:white;
+%% Estilos generales
+classDef enrutamiento fill:#EA4335,stroke:#C62828,color:white;
+classDef core fill:#0D47A1,stroke:#0B3C91,color:white;
+classDef distribucion fill:#4285F4,stroke:#2A56C6,color:white;
+classDef redistribucion fill:#34A853,stroke:#2E7D32,color:white;
+classDef acceso fill:#FBBC05,stroke:#E8A203,color:black;
+classDef especial fill:#EF6C00,stroke:#E65100,color:white;
 
-    %% Estilos de sector
-    classDef secundaria fill:#BBDEFB,stroke:#1976D2,color:#000;
-    classDef tecnica fill:#C8E6C9,stroke:#388E3C,color:#000;
-    classDef primaria fill:#FFF9C4,stroke:#FBC02D,color:#000;
-    classDef jardin fill:#F8BBD0,stroke:#D81B60,color:#000;
+%% Estilos de sector
+classDef secundaria fill:#BBDEFB,stroke:#1976D2,color:#000;
+classDef tecnica fill:#C8E6C9,stroke:#388E3C,color:#000;
+classDef primaria fill:#FFF9C4,stroke:#FBC02D,color:#000;
+classDef jardin fill:#F8BBD0,stroke:#D81B60,color:#000;
 
-    %% Nodo inicial
-    RF[Router Fortigate] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
+%% Nodo inicial
+RF[Router Fortigate]:::enrutamiento --> CORE_00["CORE_00 - SW CORE C01 (DATACENTER) [L3]"]:::core
 
-    %% ADMIN
-    subgraph admin_space [ ]
-    direction TB
-        S02["SW GEN L2 ADMINISTRACION"]
-    end
-    RF --> S02
+%% ADMIN
+subgraph admin_space [ ]
+direction TB
+    ACC_900["ACC_900 - SW ADMINISTRACION [L2]"]:::acceso
+end
+RF --> ACC_900
 
-    %% SECTOR SECUNDARIA
-    subgraph SECUNDARIA
-    direction TB
-        SEC_LABEL[Secundaria]:::secundaria
-        C01 --> S03["03 - SW SEC PA - DATACENTER"]
-        S03 --> FLEX1["03 - 00 Flex DATACENTER"]
-        S03 --> S031["SW GEN L2 SECRE / DIR SEC BASICO"]
-        S03 --> S032["SW GEN L2 TICS (Corina)"]
-        S032 --> S036["SW GEN L2 COMUNICACIONES"]
-        S03 --> S033["SW GEN L2 ENTREPISO BIBLIOTECA"]
-        S03 --> S034["SW GEN L2 PRECEPTORIA 310"]
-        S034 --> S037["SW GEN L2 UNIFORMES"]
-        S03 --> S035["SW GEN L2 LAB FISICA"]
+%% SECTOR SECUNDARIA
+subgraph SECUNDARIA
+direction TB
+    SEC_LABEL[Secundaria]:::secundaria
 
-        C01 --> S04["04 - SW SEC02 - STELA NEW"]
-        S04 --> E10["10 - SW ED. FISICA 24B"]
-        E10 --> M13["13 - SW MUSICA 8B"]
-        S04 --> P11["11 - SEC PA SALA PROF"]
-        P11 --> SPROF["SW GEN L2 SALA PROF"]
-        S04 --> FLEX2["15 - SW FLEX GARITA MALAVER"]
+    CORE_00 --> DIST_01["DIST_01 - SECUNDARIA PA [L3]"]:::distribucion
+    DIST_01 --> REDIS_01-01["REDIS_01-01 - FLEX DATACENTER [L2]"]:::redistribucion
+    DIST_01 --> REDIS_01-02["REDIS_01-02 - SECRE / DIR SEC BASICO [L2]"]:::redistribucion
+    REDIS_01-02 --> ACC_01-02-01["ACC_01-02-01 - COMUNICACIONES [L2]"]:::acceso
+    DIST_01 --> REDIS_01-03["REDIS_01-03 - TICS (Corina) [L2]"]:::redistribucion
+    DIST_01 --> REDIS_01-04["REDIS_01-04 - ENTREPISO BIBLIOTECA [L2]"]:::redistribucion
+    DIST_01 --> REDIS_01-05["REDIS_01-05 - PRECEPTORIA 310 [L2]"]:::redistribucion
+    REDIS_01-05 --> ACC_01-05-01["ACC_01-05-01 - UNIFORMES [L2]"]:::acceso
+    DIST_01 --> REDIS_01-06["REDIS_01-06 - LAB FISICA [L2]"]:::redistribucion
 
-        C01 --> S05["05 - SW PRECEPTORIA 210 10GB"]
-        S05 --> P14["14 - SW SEC PA - PRECEPTORIA 252"]
-    end
+    CORE_00 --> DIST_02["DIST_02 - SECUNDARIA STELA NEW [L3]"]:::distribucion
+    DIST_02 --> REDIS_02-01["REDIS_02-01 - ED. FISICA 24B [L2]"]:::redistribucion
+    REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - MUSICA 8B [L2]"]:::acceso
+    DIST_02 --> REDIS_02-02["REDIS_02-02 - SALA PROFESORES [L2]"]:::redistribucion
+    REDIS_02-02 --> ACC_02-02-01["ACC_02-02-01 - SALA PROF [L2]"]:::acceso
+    DIST_02 --> REDIS_02-03["REDIS_02-03 - FLEX GARITA MALAVER [L2]"]:::redistribucion
 
-    %% SECTOR TECNICA
-    subgraph TECNICA
-    direction TB
-        TEC_LABEL[Técnica]:::tecnica
-        C01 --> S06["06 - SW TECNICA - LAB DOMOTICA"]
-        S06 --> T17["17 - SW SEC SS TANGO - FABLAB"]
-        T17 --> TANGO["SW GEN L2 TANGO"]
-        S06 --> ELEC1["SW GEN L2 ELEC 1"]
-        S06 --> ELEC2["SW GEN L2 ELEC 2"]
-        S06 --> ELEC3["SW GEN L2 ELECTRICIDAD"]
-        S06 --> LIDE["SW GEN L2 LIDE"]
-    end
+    CORE_00 --> DIST_03["DIST_03 - PRECEPTORIA 210 [L3]"]:::distribucion
+    DIST_03 --> REDIS_03-01["REDIS_03-01 - PRECEPTORIA 252 [L2]"]:::redistribucion
+end
 
-    %% SECTOR PRIMARIA
-    subgraph PRIMARIA
-    direction TB
-        PRI_LABEL[Primaria]:::primaria
-        C01 --> S07["07 - SW - PRIMARIA AUXILIARES"]
-        S07 --> P08["08 - SW PRIMARIA PA - ESCALERA"]
-        S07 --> K07["07 - 00 SW FLEX KIOSKO PRIMARIA"]
-        K07 --> RMIK["ROUTER MIKROTIK MODO SW"]
-        S07 --> D02["02 - SW PRI PB DEPTO IT"]
-        S07 --> G16["16 - PRI PB AULA 21 (GIM CHICO)"]
-        S07 --> EOE["SW GEN L2 EOE PRIMARIA"]
-        S07 --> SPRI["SW GEN L2 SECRETARIA PRIMARIA"]
-    end
+%% SECTOR TECNICA
+subgraph TECNICA
+direction TB
+    TEC_LABEL[Técnica]:::tecnica
 
-    %% SECTOR JARDÍN
-    subgraph JARDIN
-    direction TB
-        JAR_LABEL[Jardín]:::jardin
-        C01 --> S09["09 - JARDIN - DIRECCION_V2"]
-        S09 --> L12["12 - SW LAB ENERGIAS 24P"]
+    CORE_00 --> DIST_04["DIST_04 - TECNICA LAB DOMOTICA [L3]"]:::distribucion
+    DIST_04 --> REDIS_04-01["REDIS_04-01 - SS TANGO FABLAB [L2]"]:::redistribucion
+    REDIS_04-01 --> ACC_04-01-01["ACC_04-01-01 - TANGO [L2]"]:::acceso
+    DIST_04 --> ACC_04-02["ACC_04-02 - ELEC 1 [L2]"]:::acceso
+    DIST_04 --> ACC_04-03["ACC_04-03 - ELEC 2 [L2]"]:::acceso
+    DIST_04 --> ACC_04-04["ACC_04-04 - ELECTRICIDAD [L2]"]:::acceso
+    DIST_04 --> ACC_04-05["ACC_04-05 - LIDE [L2]"]:::acceso
+end
 
-        %% Agrupar vertical los hijos de L12
-        L12 --> LC1["SW GEN L2 LAB 1 COMP"]
-        L12 --> LC2["SW GEN L2 LAB 2 COMP"]
-        L12 --> LE3["SW GEN L2 LAB 3 ENERGIAS"]
-        L12 --> CNC["SW GEN L2 LAB 2 CNC"]
-        L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
-    end
+%% SECTOR PRIMARIA
+subgraph PRIMARIA
+direction TB
+    PRI_LABEL[Primaria]:::primaria
 
-    %% Clases para nodos
-    class RF enrutamiento;
-    class C01 core;
-    class S03,S04,S05,S06,S07,S09 distribucion;
-    class FLEX1,FLEX2,P11,E10,P14,T17,P08,K07,G16,L12 redistribucion;
-    class S031,S032,S033,S034,S035,S036,S037,M13,SPROF,TANGO,ELEC1,ELEC2,ELEC3,LIDE,D02,EOE,SPRI,LC1,LC2,LE3,CNC,KSEC,S02 acceso;
-    class RMIK especial;
+    CORE_00 --> DIST_05["DIST_05 - PRIMARIA AUXILIARES [L3]"]:::distribucion
+    DIST_05 --> REDIS_05-01["REDIS_05-01 - ESCALERA PA [L2]"]:::redistribucion
+    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - FLEX KIOSKO PRIMARIA [L2]"]:::acceso
+    ACC_05-01-01 --> ESP_05-01-01-01["ESP_05-01-01-01 - ROUTER MIKROTIK MODO SW [L2]"]:::especial
+    DIST_05 --> ACC_05-02["ACC_05-02 - DEPTO IT PB [L2]"]:::acceso
+    DIST_05 --> ACC_05-03["ACC_05-03 - AULA 21 GIM CHICO [L2]"]:::acceso
+    DIST_05 --> ACC_05-04["ACC_05-04 - EOE PRIMARIA [L2]"]:::acceso
+    DIST_05 --> ACC_05-05["ACC_05-05 - SECRETARIA PRIMARIA [L2]"]:::acceso
+end
+
+%% SECTOR JARDÍN
+subgraph JARDIN
+direction TB
+    JAR_LABEL[Jardín]:::jardin
+
+    CORE_00 --> DIST_06["DIST_06 - JARDIN DIRECCION [L3]"]:::distribucion
+    DIST_06 --> REDIS_06-01["REDIS_06-01 - LAB ENERGIAS 24P [L2]"]:::redistribucion
+    REDIS_06-01 --> ACC_06-01-01["ACC_06-01-01 - LAB 1 COMP [L2]"]:::acceso
+    REDIS_06-01 --> ACC_06-01-02["ACC_06-01-02 - LAB 2 COMP [L2]"]:::acceso
+    REDIS_06-01 --> ACC_06-01-03["ACC_06-01-03 - LAB 3 ENERGIAS [L2]"]:::acceso
+    REDIS_06-01 --> ACC_06-01-04["ACC_06-01-04 - LAB 2 CNC [L2]"]:::acceso
+    REDIS_06-01 --> ACC_06-01-05["ACC_06-01-05 - KIOSCO SEC SEC [L2]"]:::acceso
+end
 
 ```
