@@ -1,3 +1,5 @@
+
+```mermaid
 flowchart LR
     classDef core fill:#4285F4,stroke:#2A56C6,color:white;
     classDef distribucion fill:#34A853,stroke:#2E7D32,color:white;
@@ -55,3 +57,4 @@ flowchart LR
     class S03,S04,S05,S06,S07,S09,F03 distribucion;
     class FLEX1,FLEX2,S031,S032,S033,S034,S035,S036,S037,E10,M13,P11,SPROF,P14,T17,TANGO,ELEC1,ELEC2,ELEC3,LIDE,P08,K07,RMIK,D02,G16,EOE,SPRI,L12,LC1,LC2,LE3,CNC,KSEC acceso;
     class RMIK especial;
+```
