@@ -3,7 +3,7 @@
 flowchart LR
 
     classDef enrutamiento fill:#EA4335,stroke:#C62828,color:white;
-    classDef core fill:#4245F4,stroke:#2A56C6,color:white;
+    classDef core fill:#0D47A1,stroke:#0B3C91,color:white;
     classDef distribucion fill:#4285F4,stroke:#2A56C6,color:white;
     classDef redistribucion fill:#34A853,stroke:#2E7D32,color:white;
     classDef acceso fill:#FBBC05,stroke:#E8A203,color:black;
