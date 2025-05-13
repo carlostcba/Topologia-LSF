@@ -61,5 +61,5 @@ flowchart LR
     class S03,S04,S05,S06,S07,S09 distribucion;
     class FLEX1,FLEX2,P11,E10,P14,T17,P08,K07,G16,L12 redistribucion;
     class S031,S032,S033,S034,S035,S036,S037,,M13,SPROF,TANGO,ELEC1,ELEC2,ELEC3,LIDE,D02,EOE,SPRI,LC1,LC2,LE3,CNC,KSEC,S02 acceso;
-    class RF,RMIK especial;
+    class RMIK especial;
 ```
