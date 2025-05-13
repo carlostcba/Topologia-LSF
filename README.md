@@ -1,57 +1,55 @@
 
-# 🟥 Topología de Red – La Salle Florida
+```mermaid
+flowchart TD
+    RF["Router Fortigate"] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
 
+    %% SECUNDARIA
+    C01 --> S03["03 - SW SEC PA - DATACENTER"]
+    S03 --> F03["03 - 00 Flex DATACENTER"]
+    F03 --> FLEX1["15 - SW FLEX GARITA MALAVER"]
+    S03 --> S031["SW GEN L2 SECRE / DIR SEC BASICO"]
+    S03 --> S032["SW GEN L2 TICS (Corina)"]
+    S03 --> S033["SW GEN L2 ENTREPISO BIBLIOTECA"]
+    S03 --> S034["SW GEN L2 PRECEPTORIA 310"]
+    S03 --> S035["SW GEN L2 LAB FISICA"]
+    S03 --> S036["SW GEN L2 COMUNICACIONES"]
+    S03 --> S037["SW GEN L2 UNIFORMES"]
+
+    C01 --> S04["04 - SW SEC02 - STELA NEW"]
+    S04 --> E10["10 - SW ED. FISICA 24B"]
+    E10 --> M13["13 - SW MUSICA 8B"]
+    S04 --> P11["11 - SEC PA SALA PROF"]
+    P11 --> SPROF["SW GEN L2 SALA PROF"]
+    S04 --> FLEX2["15 - SW FLEX GARITA MALAVER"]
+
+    C01 --> S05["05 - SW PRECEPTORIA 210 10GB"]
+    S05 --> P14["14 - SW SEC PA - PRECEPTORIA 252"]
+
+    %% TECNICA
+    C01 --> S06["06 - SW TECNICA - LAB DOMOTICA"]
+    S06 --> T17["17 - SW SEC SS TANGO - FABLAB"]
+    T17 --> TANGO["SW GEN L2 TANGO"]
+    S06 --> ELEC1["SW GEN L2 ELEC 1"]
+    S06 --> ELEC2["SW GEN L2 ELEC 2"]
+    S06 --> ELEC3["SW GEN L2 ELECTRICIDAD"]
+    S06 --> LIDE["SW GEN L2 LIDE"]
+
+    %% PRIMARIA
+    C01 --> S07["07 - SW - PRIMARIA AUXILIARES"]
+    S07 --> P08["08 - SW PRIMARIA PA - ESCALERA"]
+    S07 --> K07["07 - 00 SW FLEX KIOSKO PRIMARIA"]
+    K07 --> RMIK["ROUTER MIKROTIK MODO SW"]
+    S07 --> D02["02 - SW PRI PB DEPTO IT"]
+    S07 --> G16["16 - PRI PB AULA 21 (GIM CHICO)"]
+    S07 --> EOE["SW GEN L2 EOE PRIMARIA"]
+    S07 --> SPRI["SW GEN L2 SECRETARIA PRIMARIA"]
+
+    %% JARDIN
+    C01 --> S09["09 - JARDIN - DIRECCION_V2"]
+    S09 --> L12["12 - SW LAB ENERGIAS 24P"]
+    L12 --> LC1["SW GEN L2 LAB 1 COMP"]
+    L12 --> LC2["SW GEN L2 LAB 2 COMP"]
+    L12 --> LE3["SW GEN L2 LAB 3 ENERGIAS"]
+    L12 --> CNC["SW GEN L2 LAB 2 CNC"]
+    L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
 ```
-Router Fortigate
-└── 01 - SW SEC PA - DATACENTER (FO)
-    ├── 03 - SW SEC PA - DATACENTER
-    │   ├── 03 - 00 Flex DATACENTER
-    │   │   └── 15 - SW FLEX GARITA MALAVER
-    │   ├── SW GEN L2 SECRE / DIR SEC BASICO
-    │   ├── SW GEN L2 TICS (Corina)
-    │   ├── SW GEN L2 ENTREPISO BIBLIOTECA
-    │   ├── SW GEN L2 PRECEPTORIA 310
-    │   ├── SW GEN L2 LAB FISICA
-    │   ├── SW GEN L2 COMUNICACIONES
-    │   └── SW GEN L2 UNIFORMES
-    ├── 04 - SW SEC02 - STELA NEW
-    │   ├── 10 - SW ED. FISICA 24B
-    │   │   └── 13 - SW MUSICA 8B
-    │   ├── 11 - SEC PA SALA PROF
-    │   │   └── SW GEN L2 SALA PROF
-    │   └── 15 - SW FLEX GARITA MALAVER
-    ├── 05 - SW PRECEPTORIA 210 10GB
-    │   └── 14 - SW SEC PA - PRECEPTORIA 252
-    ├── 06 - SW TECNICA - LAB DOMOTICA
-    │   ├── 17 - SW SEC SS TANGO - FABLAB
-    │   │   └── SW GEN L2 TANGO
-    │   ├── SW GEN L2 ELEC 1
-    │   ├── SW GEN L2 ELEC 2
-    │   ├── SW GEN L2 ELECTRICIDAD
-    │   └── SW GEN L2 LIDE
-    ├── 07 - SW - PRIMARIA AUXILIARES
-    │   ├── 08 - SW PRIMARIA PA - ESCALERA
-    │   ├── 07 - 00 SW FLEX KIOSKO PRIMARIA
-    │   │   └── ROUTER MIKROTIK MODO SW
-    │   ├── 02 - SW PRI PB DEPTO IT
-    │   ├── 16 - PRI PB AULA 21 (GIM CHICO)
-    │   ├── SW GEN L2 EOE PRIMARIA
-    │   └── SW GEN L2 SECRETARIA PRIMARIA
-    └── 09 - JARDIN - DIRECCION_V2
-        └── 12 - SW LAB ENERGIAS 24P
-            ├── SW GEN L2 LAB 1 COMP
-            ├── SW GEN L2 LAB 2 COMP
-            ├── SW GEN L2 LAB 3 ENERGIAS
-            ├── SW GEN L2 LAB 2 CNC
-            └── SW GEN L2 KIOSCO SEC SEC
-```
-
----
-
-## 🗂️ Organización por sector
-
-- **Core**: `01 - SW SEC PA - DATACENTER (FO)`
-- **Secundaria**: Switches 03, 04, 05
-- **Técnica**: Switch 06
-- **Primaria**: Switch 07
-- **Jardín**: Switch 09
