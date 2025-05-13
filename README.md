@@ -9,7 +9,6 @@ flowchart LR
     RF[Router Fortigate] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
     C01 --> S03["03 - SW SEC PA - DATACENTER"]
     S03 --> F03["03 - 00 Flex DATACENTER"]
-    F03 --> FLEX1["15 - SW FLEX GARITA MALAVER"]
     S03 --> S031["SW GEN L2 SECRE / DIR SEC BASICO"]
     S03 --> S032["SW GEN L2 TICS (Corina)"]
     S03 --> S033["SW GEN L2 ENTREPISO BIBLIOTECA"]
