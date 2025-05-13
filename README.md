@@ -7,6 +7,7 @@ flowchart LR
     classDef especial fill:#EA4335,stroke:#C62828,color:white;
 
     RF[Router Fortigate] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
+    RF --> S02["SW GEN L2 ADMINISTRACION"]
     C01 --> S03["03 - SW SEC PA - DATACENTER"]
     S03 --> F03["03 - 00 Flex DATACENTER"]
     S03 --> S031["SW GEN L2 SECRE / DIR SEC BASICO"]
@@ -52,7 +53,7 @@ flowchart LR
     L12 --> CNC["SW GEN L2 LAB 2 CNC"]
     L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
 
-    class RF,C01 core;
+    class RF,C01,S02 core;
     class S03,S04,S05,S06,S07,S09,F03,FLEX1,FLEX2,P11,E10,P14,T17,P08,K07,G16,L12 distribucion;
     class S031,S032,S033,S034,S035,S036,S037,,M13,SPROF,TANGO,ELEC1,ELEC2,ELEC3,LIDE,D02,EOE,SPRI,LC1,LC2,LE3,CNC,KSEC acceso;
     class RMIK especial;
