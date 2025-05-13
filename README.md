@@ -1,56 +1,57 @@
-
-```mermaid
 flowchart LR
-    %% Estilos
     classDef core fill:#4285F4,stroke:#2A56C6,color:white;
     classDef distribucion fill:#34A853,stroke:#2E7D32,color:white;
     classDef acceso fill:#FBBC05,stroke:#E8A203,color:black;
     classDef especial fill:#EA4335,stroke:#C62828,color:white;
 
-    %% Núcleo
-    RF[fa:fa-shield-alt Router Fortigate]:::core --> C01[fa:fa-network-wired 01 - SW SEC PA - DATACENTER (FO)]:::core
+    RF[Router Fortigate] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
+    C01 --> S03["03 - SW SEC PA - DATACENTER"]
+    S03 --> F03["03 - 00 Flex DATACENTER"]
+    F03 --> FLEX1["15 - SW FLEX GARITA MALAVER"]
+    S03 --> S031["SW GEN L2 SECRE / DIR SEC BASICO"]
+    S03 --> S032["SW GEN L2 TICS (Corina)"]
+    S03 --> S033["SW GEN L2 ENTREPISO BIBLIOTECA"]
+    S03 --> S034["SW GEN L2 PRECEPTORIA 310"]
+    S03 --> S035["SW GEN L2 LAB FISICA"]
+    S03 --> S036["SW GEN L2 COMUNICACIONES"]
+    S03 --> S037["SW GEN L2 UNIFORMES"]
 
-    %% SECUNDARIA
-    C01 --> S03[fa:fa-project-diagram 03 - SW SEC PA - DATACENTER]:::distribucion
-    S03 --> F03[fa:fa-random 03 - 00 Flex DATACENTER]:::distribucion --> FLEX1[fa:fa-plug 15 - SW FLEX GARITA MALAVER]:::acceso
-    S03 --> S031[SW GEN L2 SECRE / DIR SEC BASICO]:::acceso
-    S03 --> S032[SW GEN L2 TICS (Corina)]:::acceso
-    S03 --> S033[SW GEN L2 ENTREPISO BIBLIOTECA]:::acceso
-    S03 --> S034[SW GEN L2 PRECEPTORIA 310]:::acceso
-    S03 --> S035[SW GEN L2 LAB FISICA]:::acceso
-    S03 --> S036[SW GEN L2 COMUNICACIONES]:::acceso
-    S03 --> S037[SW GEN L2 UNIFORMES]:::acceso
+    C01 --> S04["04 - SW SEC02 - STELA NEW"]
+    S04 --> E10["10 - SW ED. FISICA 24B"]
+    E10 --> M13["13 - SW MUSICA 8B"]
+    S04 --> P11["11 - SEC PA SALA PROF"]
+    P11 --> SPROF["SW GEN L2 SALA PROF"]
+    S04 --> FLEX2["15 - SW FLEX GARITA MALAVER"]
 
-    C01 --> S04[fa:fa-project-diagram 04 - SW SEC02 - STELA NEW]:::distribucion
-    S04 --> E10[10 - SW ED. FISICA 24B]:::acceso --> M13[SW MUSICA 8B]:::acceso
-    S04 --> P11[11 - SEC PA SALA PROF]:::acceso --> SPROF[SW GEN L2 SALA PROF]:::acceso
-    S04 --> FLEX2[fa:fa-plug 15 - SW FLEX GARITA MALAVER]:::acceso
+    C01 --> S05["05 - SW PRECEPTORIA 210 10GB"]
+    S05 --> P14["14 - SW SEC PA - PRECEPTORIA 252"]
 
-    C01 --> S05[fa:fa-project-diagram 05 - SW PRECEPTORIA 210 10GB]:::distribucion --> P14[SW SEC PA - PRECEPTORIA 252]:::acceso
+    C01 --> S06["06 - SW TECNICA - LAB DOMOTICA"]
+    S06 --> T17["17 - SW SEC SS TANGO - FABLAB"]
+    T17 --> TANGO["SW GEN L2 TANGO"]
+    S06 --> ELEC1["SW GEN L2 ELEC 1"]
+    S06 --> ELEC2["SW GEN L2 ELEC 2"]
+    S06 --> ELEC3["SW GEN L2 ELECTRICIDAD"]
+    S06 --> LIDE["SW GEN L2 LIDE"]
 
-    %% TECNICA
-    C01 --> S06[fa:fa-tools 06 - SW TECNICA - LAB DOMOTICA]:::distribucion
-    S06 --> T17[17 - SW SEC SS TANGO - FABLAB]:::acceso --> TANGO[SW GEN L2 TANGO]:::acceso
-    S06 --> ELEC1[SW GEN L2 ELEC 1]:::acceso
-    S06 --> ELEC2[SW GEN L2 ELEC 2]:::acceso
-    S06 --> ELEC3[SW GEN L2 ELECTRICIDAD]:::acceso
-    S06 --> LIDE[SW GEN L2 LIDE]:::acceso
+    C01 --> S07["07 - SW - PRIMARIA AUXILIARES"]
+    S07 --> P08["08 - SW PRIMARIA PA - ESCALERA"]
+    S07 --> K07["07 - 00 SW FLEX KIOSKO PRIMARIA"]
+    K07 --> RMIK["ROUTER MIKROTIK MODO SW"]
+    S07 --> D02["02 - SW PRI PB DEPTO IT"]
+    S07 --> G16["16 - PRI PB AULA 21 (GIM CHICO)"]
+    S07 --> EOE["SW GEN L2 EOE PRIMARIA"]
+    S07 --> SPRI["SW GEN L2 SECRETARIA PRIMARIA"]
 
-    %% PRIMARIA
-    C01 --> S07[fa:fa-school 07 - SW - PRIMARIA AUXILIARES]:::distribucion
-    S07 --> P08[SW PRIMARIA PA - ESCALERA]:::acceso
-    S07 --> K07[SW FLEX KIOSKO PRIMARIA]:::acceso --> RMIK[fa:fa-wifi ROUTER MIKROTIK MODO SW]:::especial
-    S07 --> D02[SW PRI PB DEPTO IT]:::acceso
-    S07 --> G16[PRI PB AULA 21 (GIM CHICO)]:::acceso
-    S07 --> EOE[SW GEN L2 EOE PRIMARIA]:::acceso
-    S07 --> SPRI[SW GEN L2 SECRETARIA PRIMARIA]:::acceso
+    C01 --> S09["09 - JARDIN - DIRECCION_V2"]
+    S09 --> L12["12 - SW LAB ENERGIAS 24P"]
+    L12 --> LC1["SW GEN L2 LAB 1 COMP"]
+    L12 --> LC2["SW GEN L2 LAB 2 COMP"]
+    L12 --> LE3["SW GEN L2 LAB 3 ENERGIAS"]
+    L12 --> CNC["SW GEN L2 LAB 2 CNC"]
+    L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
 
-    %% JARDIN
-    C01 --> S09[fa:fa-seedling 09 - JARDIN - DIRECCION_V2]:::distribucion
-    S09 --> L12[12 - SW LAB ENERGIAS 24P]:::acceso
-    L12 --> LC1[SW GEN L2 LAB 1 COMP]:::acceso
-    L12 --> LC2[SW GEN L2 LAB 2 COMP]:::acceso
-    L12 --> LE3[SW GEN L2 LAB 3 ENERGIAS]:::acceso
-    L12 --> CNC[SW GEN L2 LAB 2 CNC]:::acceso
-    L12 --> KSEC[SW GEN L2 KIOSCO SEC SEC]:::acceso
-```
+    class RF,C01 core;
+    class S03,S04,S05,S06,S07,S09,F03 distribucion;
+    class FLEX1,FLEX2,S031,S032,S033,S034,S035,S036,S037,E10,M13,P11,SPROF,P14,T17,TANGO,ELEC1,ELEC2,ELEC3,LIDE,P08,K07,RMIK,D02,G16,EOE,SPRI,L12,LC1,LC2,LE3,CNC,KSEC acceso;
+    class RMIK especial;
