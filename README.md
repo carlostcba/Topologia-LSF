@@ -1,9 +1,8 @@
 
 ```mermaid
-flowchart TD
-    RF["Router Fortigate"] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
+flowchart LR
+    RF[Router Fortigate] --> C01["01 - SW SEC PA - DATACENTER (FO)"]
 
-    %% SECUNDARIA
     C01 --> S03["03 - SW SEC PA - DATACENTER"]
     S03 --> F03["03 - 00 Flex DATACENTER"]
     F03 --> FLEX1["15 - SW FLEX GARITA MALAVER"]
@@ -25,7 +24,6 @@ flowchart TD
     C01 --> S05["05 - SW PRECEPTORIA 210 10GB"]
     S05 --> P14["14 - SW SEC PA - PRECEPTORIA 252"]
 
-    %% TECNICA
     C01 --> S06["06 - SW TECNICA - LAB DOMOTICA"]
     S06 --> T17["17 - SW SEC SS TANGO - FABLAB"]
     T17 --> TANGO["SW GEN L2 TANGO"]
@@ -34,7 +32,6 @@ flowchart TD
     S06 --> ELEC3["SW GEN L2 ELECTRICIDAD"]
     S06 --> LIDE["SW GEN L2 LIDE"]
 
-    %% PRIMARIA
     C01 --> S07["07 - SW - PRIMARIA AUXILIARES"]
     S07 --> P08["08 - SW PRIMARIA PA - ESCALERA"]
     S07 --> K07["07 - 00 SW FLEX KIOSKO PRIMARIA"]
@@ -44,7 +41,6 @@ flowchart TD
     S07 --> EOE["SW GEN L2 EOE PRIMARIA"]
     S07 --> SPRI["SW GEN L2 SECRETARIA PRIMARIA"]
 
-    %% JARDIN
     C01 --> S09["09 - JARDIN - DIRECCION_V2"]
     S09 --> L12["12 - SW LAB ENERGIAS 24P"]
     L12 --> LC1["SW GEN L2 LAB 1 COMP"]
