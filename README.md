@@ -1,6 +1,8 @@
 
 ```mermaid
 flowchart LR
+
+    classDef enrutamiento fill:#EA4335,stroke:#C62828,color:white;
     classDef core fill:#4285F4,stroke:#2A56C6,color:white;
     classDef distribucion fill:#34A853,stroke:#2E7D32,color:white;
     classDef acceso fill:#FBBC05,stroke:#E8A203,color:black;
@@ -53,6 +55,7 @@ flowchart LR
     L12 --> CNC["SW GEN L2 LAB 2 CNC"]
     L12 --> KSEC["SW GEN L2 KIOSCO SEC SEC"]
 
+    class RF, enrutamiento;
     class C01,S03,S04,S05,S06,S07,S09 core;
     class FLEX1,FLEX2,P11,E10,P14,T17,P08,K07,G16,L12 distribucion;
     class S031,S032,S033,S034,S035,S036,S037,,M13,SPROF,TANGO,ELEC1,ELEC2,ELEC3,LIDE,D02,EOE,SPRI,LC1,LC2,LE3,CNC,KSEC,S02 acceso;
