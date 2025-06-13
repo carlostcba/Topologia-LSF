@@ -6,7 +6,9 @@ classDef enrutamiento fill:#EA4335,stroke:#C62828,color:white;
 classDef core fill:#0D47A1,stroke:#0B3C91,color:white;
 classDef distribucion fill:#4285F4,stroke:#2A56C6,color:white;
 classDef redistribucion fill:#34A853,stroke:#2E7D32,color:white;
+classDef redistribucionunifi fill:#66BB6A,stroke:#43A047,color:white;
 classDef acceso fill:#FBBC05,stroke:#E8A203,color:black;
+classDef accesoflex fill:#81C784,stroke:#4CAF50,color:black;
 classDef especial fill:#EF6C00,stroke:#E65100,color:white;
 
 %% Estilos de sector
@@ -31,7 +33,7 @@ direction TB
     SEC_LABEL[Secundaria]:::secundaria
 
     CORE_00 --> DIST_01["DIST_01 - 03 SW SEC PA - DATACENTER [L3]"]:::distribucion
-    DIST_01 --> REDIS_01-01["REDIS_01-01 - 03-00 FLEX DATACENTER [L2]"]:::redistribucion
+    DIST_01 --> REDIS_01-01["REDIS_01-01 - 03-00 FLEX DATACENTER [L2]"]:::accesoflex
     DIST_01 --> ACC_01-02["ACC_01-02 - SW GEN L2 SECRE / DIR SEC BASICO [L2]"]:::acceso
     DIST_01 --> ACC_01-03["ACC_01-03 - SW GEN L2 TICS (Corina) [L2]"]:::acceso
     ACC_01-03 --> ACC_01-03-01["ACC_01-03-01 - SW GEN L2 COMUNICACIONES [L2]"]:::acceso
@@ -45,7 +47,7 @@ direction TB
     REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - 13 SW MUSICA 8B [L2]"]:::redistribucion
     DIST_02 --> REDIS_02-02["REDIS_02-02 - 11 SEC PA SALA PROF [L3]"]:::redistribucion
     REDIS_02-02 --> ACC_02-02-01["ACC_02-02-01 - SW GEN L2 SALA PROF [L2]"]:::acceso
-    DIST_02 --> ACC_02-03["ACC_02-03 - 15 SW FLEX GARITA MALAVER [L2]"]:::redistribucion
+    DIST_02 --> ACC_02-03["ACC_02-03 - 15 SW FLEX GARITA MALAVER [L2]"]:::accesoflex
 
     CORE_00 --> DIST_03["DIST_03 - 05 SW PRECEPTORIA 210 [L3]"]:::distribucion
     DIST_03 --> REDIS_03-01["REDIS_03-01 - 14 SW SEC PA - PRECEPTORIA 252 [L3]"]:::redistribucion
@@ -77,7 +79,7 @@ direction TB
     DIST_05 --> ACC_05-03["ACC_05-03 - 16 PRI PB AULA 21 (GIM CHICO) [L2]"]:::acceso
     DIST_05 --> ACC_05-04["ACC_05-04 - SW GEN L2 EOE PRIMARIA [L2]"]:::acceso
     DIST_05 --> ACC_05-05["ACC_05-05 - SW GEN L2 SECRETARIA PRIMARIA [L2]"]:::acceso
-    DIST_05 --> ACC_05-06["ACC_05-06 - 07-00 SW FLEX KIOSKO PRIMARIA [L2]"]:::acceso
+    DIST_05 --> ACC_05-06["ACC_05-06 - 07-00 SW FLEX KIOSKO PRIMARIA [L2]"]:::accesoflex
     ACC_05-06 --> ESP_05-06-01["ESP_05-06-01 - LIBRERIA ROUTER MIKROTIK MODO SW [L2]"]:::especial
 end
 
