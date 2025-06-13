@@ -49,6 +49,7 @@ direction TB
 
     CORE_00 --> DIST_03["DIST_03 - 05 SW PRECEPTORIA 210 [L3]"]:::distribucion
     DIST_03 --> REDIS_03-01["REDIS_03-01 - 14 SW SEC PA - PRECEPTORIA 252 [L3]"]:::redistribucion
+    DIST_03 --> ACC_03-01["SW GEN L2 SEC PB SALA PROF / PRE 210 [L2]"]:::acceso
 end
 
 %% SECTOR TECNICA
