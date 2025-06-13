@@ -61,7 +61,6 @@ direction TB
 
     CORE_00 --> DIST_04["DIST_04 - 06 SW TECNICA - LAB DOMOTICA [L3]"]:::distribucion
     DIST_04 --> REDIS_04-01["REDIS_04-01 - 17 SW SEC SS TANGO - FABLAB [L3]"]:::redistribucion
-    REDIS_04-01 --> ACC_04-01-01["ACC_04-01-01 - SW GEN L2 TANGO [L2]"]:::acceso
     DIST_04 --> ACC_04-02["ACC_04-02 - SW GEN L2 ELEC 1 [L2]"]:::acceso
     DIST_04 --> ACC_04-03["ACC_04-03 - SW GEN L2 ELEC 2 [L2]"]:::acceso
     DIST_04 --> ACC_04-04["ACC_04-04 - SW GEN L2 ELECTRICIDAD [L2]"]:::acceso
