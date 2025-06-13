@@ -21,7 +21,7 @@ RF[Router Fortigate]:::enrutamiento --> CORE_00["CORE_00 - SW CORE C01 (DATACENT
 %% ADMIN
 subgraph admin_space [ ]
 direction TB
-    ACC_900["ACC_900 - SW GEN L2 ADMINISTRACION [L2]"]:::acceso
+    ACC_900["ACC_900 - SW GEN L2 ADMINISTRACION [L2] GbE"]:::acceso
 end
 RF --> ACC_900
 
@@ -42,7 +42,7 @@ direction TB
 
     CORE_00 --> DIST_02["DIST_02 - 04 SW SEC02 - STELA NEW [L3]"]:::distribucion
     DIST_02 --> REDIS_02-01["REDIS_02-01 - 10 SW ED. FISICA 24B [L3]"]:::redistribucion
-    REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - 13 SW MUSICA 8B [L2]"]:::acceso
+    REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - 13 SW MUSICA 8B [L2]"]:::redistribucion
     DIST_02 --> REDIS_02-02["REDIS_02-02 - 11 SEC PA SALA PROF [L3]"]:::redistribucion
     REDIS_02-02 --> ACC_02-02-01["ACC_02-02-01 - SW GEN L2 SALA PROF [L2]"]:::acceso
     DIST_02 --> ACC_02-03["ACC_02-03 - 15 SW FLEX GARITA MALAVER [L2]"]:::redistribucion
