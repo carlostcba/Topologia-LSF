@@ -44,7 +44,7 @@ direction TB
 
     CORE_00 --> DIST_02["DIST_02 - 04 SW SEC02 - STELA NEW [L3]"]:::distribucion
     DIST_02 --> REDIS_02-01["REDIS_02-01 - 10 SW ED. FISICA 24B [L3]"]:::redistribucion
-    REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - 13 SW MUSICA 8B [L2]"]:::redistribucion
+    REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - 13 SW MUSICA 8B [L2]"]:::redistribucionunifi
     DIST_02 --> REDIS_02-02["REDIS_02-02 - 11 SEC PA SALA PROF [L3]"]:::redistribucion
     REDIS_02-02 --> ACC_02-02-01["ACC_02-02-01 - SW GEN L2 SALA PROF [L2]"]:::acceso
     DIST_02 --> ACC_02-03["ACC_02-03 - 15 SW FLEX GARITA MALAVER [L2]"]:::accesoflex
@@ -75,7 +75,7 @@ direction TB
 
     CORE_00 --> DIST_05["DIST_05 - 07 SW - PRIMARIA AUXILIARES [L3]"]:::distribucion
     DIST_05 --> REDIS_05-01["REDIS_05-01 - 08 SW PRIMARIA PA - ESCALERA [L3]"]:::redistribucion
-    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - 02 SW PRI PB DEPTO IT [L2]"]:::redistribucion
+    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - 02 SW PRI PB DEPTO IT [L2]"]:::redistribucionunifi
     DIST_05 --> ACC_05-03["ACC_05-03 - 16 PRI PB AULA 21 (GIM CHICO) [L2]"]:::acceso
     DIST_05 --> ACC_05-04["ACC_05-04 - SW GEN L2 EOE PRIMARIA [L2]"]:::acceso
     DIST_05 --> ACC_05-05["ACC_05-05 - SW GEN L2 SECRETARIA PRIMARIA [L2]"]:::acceso
