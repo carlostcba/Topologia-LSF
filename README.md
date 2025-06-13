@@ -7,8 +7,8 @@ classDef core fill:#0D47A1,stroke:#0B3C91,color:white;
 classDef distribucion fill:#4285F4,stroke:#2A56C6,color:white;
 classDef redistribucion fill:#34A853,stroke:#2E7D32,color:white;
 classDef redistribucionunifi fill:#66BB6A,stroke:#43A047,color:white;
-classDef acceso fill:#FFE066,stroke:#FFCA28,color:black;
-classDef accesoGbe fill:#FBBC05,stroke:#E8A203,color:black;
+classDef acceso fill:#FFD600,stroke:#FFB300,color:black;
+classDef accesoGbE fill:#FBBC05,stroke:#E8A203,color:black;
 classDef accesoflex fill:#81C784,stroke:#4CAF50,color:black;
 classDef especial fill:#EF6C00,stroke:#E65100,color:white;
 
@@ -24,7 +24,7 @@ RF[Router Fortigate]:::enrutamiento --> CORE_00["CORE_00 - SW CORE C01 (DATACENT
 %% ADMIN
 subgraph admin_space [ ]
 direction TB
-    ACC_900["ACC_900 - SW GEN L2 ADMINISTRACION [L2] GbE"]:::acceso
+    ACC_900["ACC_900 - SW GEN L2 ADMINISTRACION [L2] GbE"]:::accesoGbE
 end
 RF --> ACC_900
 
