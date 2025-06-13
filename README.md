@@ -79,7 +79,7 @@ direction TB
     DIST_05 --> ACC_05-02["ACC_05-02 - 07-00 SW FLEX KIOSKO PRIMARIA [L2]"]:::accesoflex
     ACC_05-02 --> ESP_05-02-01["ESP_05-02-01 - LIBRERIA ROUTER MIKROTIK MODO SW [L2]"]:::especial
     DIST_05 --> ACC_05-03["ACC_05-03 - SW FLEX GIM CHICO) [L3]"]:::accesoflex
-    ACC_05-03 --> ACC_05-03-01["ACC_06-01-01 - SW GEN L2 GIM CHICO [L2]"]:::acceso
+    ACC_05-03 --> ACC_05-03-01["ACC_05-03-01 - SW GEN L2 GIM CHICO [L2]"]:::accesoGbE
     DIST_05 --> ACC_05-04["ACC_05-04 - SW GEN L2 EOE PRIMARIA [L2]"]:::accesoGbE
     DIST_05 --> ACC_05-05["ACC_05-05 - SW GEN L2 SECRETARIA PRIMARIA [L2]"]:::acceso
 end
