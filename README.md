@@ -7,7 +7,7 @@ classDef core fill:#0D47A1,stroke:#0B3C91,color:white;
 classDef distribucion fill:#4285F4,stroke:#2A56C6,color:white;
 classDef redistribucion fill:#34A853,stroke:#2E7D32,color:white;
 classDef redistribucionunifi fill:#66BB6A,stroke:#43A047,color:white;
-classDef acceso fill:#FFEB3B,stroke:#FBC02D,color:white;
+classDef acceso fill:#FFEB3B,stroke:#FBC02D,color:black;
 classDef accesoGbE fill:#FBBC05,stroke:#E8A203,color:black;
 classDef accesoflex fill:#81C784,stroke:#4CAF50,color:black;
 classDef especial fill:#EF6C00,stroke:#E65100,color:white;
