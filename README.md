@@ -73,7 +73,7 @@ direction TB
 
     CORE_00 --> DIST_05["DIST_05 - 07 SW - PRIMARIA AUXILIARES [L3]"]:::distribucion
     DIST_05 --> REDIS_05-01["REDIS_05-01 - 08 SW PRIMARIA PA - ESCALERA [L3]"]:::redistribucion
-    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - 02 SW PRI PB DEPTO IT [L2]"]:::acceso
+    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - 02 SW PRI PB DEPTO IT [L2]"]:::redistribucion
     DIST_05 --> ACC_05-03["ACC_05-03 - 16 PRI PB AULA 21 (GIM CHICO) [L2]"]:::acceso
     DIST_05 --> ACC_05-04["ACC_05-04 - SW GEN L2 EOE PRIMARIA [L2]"]:::acceso
     DIST_05 --> ACC_05-05["ACC_05-05 - SW GEN L2 SECRETARIA PRIMARIA [L2]"]:::acceso
