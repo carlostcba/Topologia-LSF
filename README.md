@@ -74,7 +74,7 @@ direction TB
 
     CORE_00 --> DIST_05["DIST_05 - 07 SW - PRIMARIA AUXILIARES [L3]"]:::distribucion
     DIST_05 --> REDIS_05-01["REDIS_05-01 - 08 SW PRIMARIA PA - ESCALERA [L3]"]:::redistribucion
-    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - 02 SW PRI PB DEPTO IT [L2]"]:::redistribucionunifi
+    REDIS_05-01 --> ACC_05-01-01["ACC_05-01-01 - 02 SW PRI PB DEPTO IT [L3]"]:::redistribucionunifi
     DIST_05 --> ACC_05-02["ACC_05-02 - 07-00 SW FLEX KIOSKO PRIMARIA [L2]"]:::accesoflex
     ACC_05-02 --> ESP_05-02-01["ESP_05-02-01 - LIBRERIA ROUTER MIKROTIK MODO SW [L2]"]:::especial
     DIST_05 --> ACC_05-03["ACC_05-03 - SW FLEX GIM CHICO) [L2]"]:::accesoflex
