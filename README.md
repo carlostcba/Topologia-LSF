@@ -34,7 +34,6 @@ direction TB
     SEC_LABEL[Secundaria]:::secundaria
 
     CORE_00 --> DIST_01["DIST_01 - 03 SW SEC PA - DATACENTER [L3]"]:::distribucion
-    DIST_01 --> REDIS_01-01["REDIS_01-01 - 03-00 FLEX DATACENTER [L2]"]:::accesoflex
     DIST_01 --> ACC_01-02["ACC_01-02 - SW GEN L2 SECRE / DIR SEC BASICO [L2]"]:::acceso
     DIST_01 --> ACC_01-03["ACC_01-03 - SW GEN L2 TICS (Corina) [L2]"]:::acceso
     ACC_01-03 --> ACC_01-03-01["ACC_01-03-01 - SW GEN L2 COMUNICACIONES [L2]"]:::acceso
@@ -81,7 +80,7 @@ direction TB
     DIST_05 --> ACC_05-03["ACC_05-03 - SW FLEX GIM CHICO) [L2]"]:::accesoflex
     ACC_05-03 --> ACC_05-03-01["ACC_05-03-01 - SW GEN L2 GIM CHICO [L2] GbE"]:::accesoGbE
     DIST_05 --> ACC_05-04["ACC_05-04 - SW GEN L2 EOE PRIMARIA [L2] GbE"]:::accesoGbE
-    DIST_05 --> ACC_05-05["ACC_05-05 - SW GEN L2 SECRETARIA PRIMARIA [L2]"]:::acceso
+    DIST_05 --> ACC_05-05["ACC_05-05 - SW FLEX L2 SECRETARIA PRIMARIA [L2]"]:::accesoflex
 end
 
 %% SECTOR JARDÍN
