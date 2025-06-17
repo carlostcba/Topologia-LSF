@@ -48,7 +48,7 @@ direction TB
     REDIS_02-01 --> ACC_02-01-01["ACC_02-01-01 - 13 SW MUSICA 8B [L2]"]:::redistribucionunifi
     DIST_02 --> REDIS_02-02["REDIS_02-02 - 11 SEC PA SALA PROF [L3]"]:::redistribucion
     REDIS_02-02 --> ACC_02-02-01["ACC_02-02-01 - SW GEN L2 SALA PROF [L2]"]:::acceso
-    DIST_02 --> ACC_02-03["ACC_02-03 - 15 SW GARITA MALAVER [L2]"]:::redistribucion
+    DIST_02 --> ACC_02-03["ACC_02-03 - 15 SW GARITA MALAVER [L3]"]:::redistribucion
 
     CORE_00 --> DIST_03["DIST_03 - 05 SW PRECEPTORIA 210 [L3]"]:::distribucion
     DIST_03 --> REDIS_03-01["REDIS_03-01 - 14 SW SEC PA - PRECEPTORIA 252 [L3]"]:::redistribucion
