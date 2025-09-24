@@ -94,6 +94,6 @@ direction TB
     REDIS_06-01 --> ACC_06-01-02["ACC_06-01-02 - SW GEN L2 LAB 2 COMP [L2]"]:::acceso
     REDIS_06-01 --> ACC_06-01-03["ACC_06-01-03 - SW GEN L2 LAB 3 ENERGIAS [L2]"]:::acceso
     REDIS_06-01 --> ACC_06-01-04["ACC_06-01-04 - SW GEN L2 LAB 2 CNC [L2]"]:::acceso
-    REDIS_06-01 --> ACC_06-01-05["ACC_06-01-05 - SW GEN L2 KIOSCO SEC SEC [L2]"]:::acceso
+    REDIS_06-01 --> ACC_06-01-05["ACC_06-01-05 - SW GEN L2 KIOSCO SEC BASICO [L2]"]:::acceso
 end
 ```
